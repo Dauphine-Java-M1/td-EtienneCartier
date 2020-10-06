@@ -1,7 +1,7 @@
 package fr.dauphine.ja.cartieretienne.td00;
 
 import java.util.ArrayList;
-import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * Hello world!
@@ -15,9 +15,8 @@ public class PrimeCollection {
 	}
 	
 	public void initRandom(int n, int m) {
-		Random stream = new Random();
 		for(int i = 0; i < n; i++) {
-			numbers.add((stream.nextInt() % (m - 1)) + 1);
+			numbers.add(ThreadLocalRandom.current().nextInt(0, m));
 		}
 	}
 	
